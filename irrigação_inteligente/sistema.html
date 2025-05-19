@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Viridis Vitae | Sistema de Irrigação Sustentável</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+         <img src="hackathon.png" class="logo" width="100" height="100">
+        <nav aria-label="Menu principal">
+            <a href="index.html">Home</a>
+            <a href="técnicas.html">Técnicas de Irrigação</a>
+            <a href="sistema.html">Sistema de Irrigação Sustentável</a>
+            <a href="java.html">Cálculo Java</a>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2>Objetivo</h2>
+            <p>Desenvolver um sistema automatizado de irrigação que monitore e controle a umidade em múltiplos pontos de uma plantação, garantindo uma irrigação eficiente em áreas maiores e reduzindo o desperdício de água.</p>
+
+            <h2>Funcionamento</h2>
+            <p>O sistema utiliza um sensor de umidade conectado ao Arduino. Quando o solo está seco, uma bomba é acionada para liberar água.</p>
+
+            <h2>Componentes</h2>
+            <button id="toggleMore" aria-expanded="false" aria-controls="moreInfo">Saiba mais</button>
+            <ul id="moreInfo" hidden>
+                <li>Arduino Mega ou ESP32: Mais pinos para múltiplos sensores</li>
+                <li>Sensores de Umidade do Solo: Colocados em diferentes partes do terreno</li>
+                <li>Módulo(s) Relé 4 canais: Controla várias bombas ou válvulas</li>
+                <li>Bombas d’água maiores ou válvulas solenoides: Para dividir a irrigação em zonas</li>
+                <li>Fonte de alimentação externa: Fonte robusta para alimentar bombas e Arduino</li>
+                <li>Reservatório ou caixa d’água grande: Armazena grande volume de água</li>
+                <li>Mangueiras e conectores: Distribui água entre as zonas</li>
+                <li>Cabos longos ou módulos sem fio (opcional): Para comunicação entre sensores distantes</li>
+                <li>Display LCD/OLED (opcional): Mostra dados no campo</li>
+                <li>Módulo RTC (relógio de tempo real) (opcional): Para agendamento da irrigação</li>
+            </ul>
+
+            <h3>Exemplo de Código Arduino</h3>
+            <br>
+            <pre>
+int sensorUmidade = A0;
+int bomba = 8;
+
+void setup() {
+    pinMode(bomba, OUTPUT);
+    Serial.begin(9600);
+}
+
+void loop() {
+    int umidade = analogRead(sensorUmidade);
+    Serial.println(umidade);
+    
+    if (umidade < 400) {
+        digitalWrite(bomba, HIGH); // Liga a bomba
+    } else {
+        digitalWrite(bomba, LOW); // Desliga a bomba
+    }
+
+    delay(2000);
+}
+            </pre>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 Viridis Vitae. Projeto de Irrigação Inteligente.</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
