@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Viridis Vitae | Cálculo Java</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Cálculo do consumo de água em Java para sistema de irrigação inteligente.">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <img src="hackathon.png" class="logo" width="100" height="100" alt="Logo Viridis Vitae">
+        <nav aria-label="Menu principal">
+            <a href="index.html">Home</a>
+            <a href="técnicas.html">Técnicas de Irrigação</a>
+            <a href="sistema.html">Sistema de Irrigação Sustentável</a>
+            <a href="java.html">Cálculo Java</a>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h1>Cálculo do Consumo de Água em Java</h1>
+            <br>
+            <p>
+                O código abaixo simula a leitura dos dados de irrigação e calcula o total de água utilizada na semana e uma estimativa mensal, considerando o tempo de irrigação diário e o consumo da bomba.
+            </p>
+            <pre><code>
+public class CalculoAgua {
+    public static void main(String[] args) {
+        // Consumo da bomba por minuto (em litros)
+        double litrosPorMinuto = 1.5;
+
+        // Minutos de irrigação por dia (7 dias)
+        int[] minutosPorDia = {10, 8, 12, 5, 7, 9, 11};
+
+        // Cálculo do total semanal
+        double totalSemanal = 0;
+        for (int minutos : minutosPorDia) {
+            totalSemanal += minutos * litrosPorMinuto;
+        }
+
+        // Estimativa mensal (4 semanas)
+        double totalMensal = totalSemanal * 4;
+
+        // Exibir resultados
+        System.out.println("Total de água usada na semana: " + totalSemanal + " litros");
+        System.out.println("Estimativa de água usada no mês: " + totalMensal + " litros");
+    }
+}
+            </code></pre>
+            <details>
+                <summary><strong>Como funciona o cálculo?</strong></summary>
+                <ul>
+                    <li><strong>litrosPorMinuto:</strong> Quantidade de água (em litros) que a bomba consome por minuto.</li>
+                    <li><strong>minutosPorDia:</strong> Array com o tempo de irrigação (em minutos) para cada dia da semana.</li>
+                    <li><strong>totalSemanal:</strong> Soma do consumo diário multiplicado pelo consumo da bomba.</li>
+                    <li><strong>totalMensal:</strong> Estimativa baseada em 4 semanas.</li>
+                </ul>
+            </details>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 Viridis Vitae. Projeto de Irrigação Inteligente.</p>
+    </footer>
+</body>
+</html>

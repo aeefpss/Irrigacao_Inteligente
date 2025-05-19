@@ -1,0 +1,200 @@
+/* Reset some default styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, 'Segoe UI';
+  line-height: 1.6;
+  background: linear-gradient(120deg, #e3f1e1 0%, #f4f9f4 100%);
+  color: #2c6e49;
+  padding: 20px;
+  min-height: 100vh;
+}
+
+/* Header styles */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #2c6e49;
+  padding: 18px 36px;
+  box-shadow: 0 4px 16px rgba(44,110,73,0.12);
+  border-radius: 14px;
+  margin-bottom: 24px;
+}
+
+header img {
+  transition: transform 0.4s cubic-bezier(.4,2,.6,1), box-shadow 0.3s;
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  box-shadow: 0 2px 8px rgba(44,110,73,0.10);
+}
+
+header img:hover {
+  transform: scale(1.08) rotate(-2deg);
+  box-shadow: 0 6px 18px rgba(44,110,73,0.18);
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 24px;
+}
+
+nav a {
+  color: #e3f1e1;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.08rem;
+  padding: 10px 18px;
+  border-radius: 7px;
+  transition: background 0.25s, color 0.25s, box-shadow 0.2s;
+  letter-spacing: 0.02em;
+  position: relative;
+}
+
+nav a:hover,
+nav a:focus {
+  background: linear-gradient(90deg, #3aa14f 60%, #2c6e49 100%);
+  color: #fff;
+  box-shadow: 0 2px 8px rgba(58,161,79,0.10);
+  outline: none;
+}
+
+/* Main content styles */
+main {
+  margin-top: 36px;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  background: #fff;
+  padding: 36px 48px;
+  border-radius: 14px;
+  box-shadow: 0 8px 28px rgba(44,110,73,0.13);
+  transition: box-shadow 0.3s;
+}
+
+main:hover {
+  box-shadow: 0 12px 36px rgba(44,110,73,0.18);
+}
+
+/* Section headings */
+h2 {
+  color: #2c6e49;
+  margin-bottom: 18px;
+  font-weight: 800;
+  border-left: 6px solid #3aa14f;
+  padding-left: 14px;
+  letter-spacing: 0.01em;
+}
+
+/* Paragraphs */
+p {
+  font-size: 1.13rem;
+  margin-bottom: 20px;
+  color: #3e5e3d;
+}
+
+/* Lists */
+ul {
+  list-style-type: disc;
+  margin-left: 28px;
+  color: #4a6c41;
+  font-size: 1.07rem;
+  margin-bottom: 22px;
+}
+
+/* Button for “Saiba mais” */
+button#toggleMore {
+  background: linear-gradient(90deg, #3aa14f 70%, #2c6e49 100%);
+  color: #fff;
+  border: none;
+  padding: 12px 28px;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 1.07rem;
+  font-weight: 700;
+  transition: background 0.3s, transform 0.2s;
+  margin-bottom: 18px;
+  box-shadow: 0 2px 8px rgba(58,161,79,0.10);
+}
+
+button#toggleMore:hover,
+button#toggleMore:focus {
+  background: linear-gradient(90deg, #2c6e49 60%, #3aa14f 100%);
+  transform: translateY(-2px) scale(1.04);
+  outline: none;
+}
+
+/* Contact email link */
+#contact a {
+  color: #3aa14f;
+  font-weight: 700;
+  text-decoration: none;
+  transition: text-decoration 0.2s, color 0.2s;
+}
+
+#contact a:hover,
+#contact a:focus {
+  text-decoration: underline;
+  color: #2c6e49;
+  outline: none;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  margin-top: 44px;
+  padding-top: 22px;
+  color: #789262;
+  font-size: 1rem;
+  letter-spacing: 0.01em;
+}
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+  main {
+    padding: 28px 16px;
+  }
+  header {
+    padding: 16px 10px;
+  }
+}
+
+@media (max-width: 700px) {
+  header {
+    flex-direction: column;
+    gap: 18px;
+    padding: 18px 6vw;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  main {
+    padding: 18px 4vw;
+    margin-top: 22px;
+  }
+
+  header img {
+    width: 72px;
+    height: 72px;
+  }
+}
+
+@media (max-width: 480px) {
+  main {
+    padding: 10px 2vw;
+  }
+  h2 {
+    font-size: 1.1rem;
+    padding-left: 8px;
+  }
+}
+
