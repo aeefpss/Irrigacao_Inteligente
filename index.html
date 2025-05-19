@@ -6,6 +6,73 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Projeto de irrigação inteligente usando Arduino e Java para otimizar o consumo de água.">
     <link rel="stylesheet" href="style.css">
+    <style>
+        .galeria-principal, .galeria-secundaria {
+            display: flex;
+            gap: 24px;
+            flex-wrap: wrap;
+            margin: 24px 0;
+            justify-content: center;
+        }
+        .galeria-secundaria {
+            gap: 18px;
+            margin: 16px 0;
+        }
+        .foto {
+            background: #e3f1e1;
+            border-radius: 14px;
+            min-width: 220px;
+            min-height: 140px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: #789262;
+            box-shadow: 0 2px 8px rgba(44,110,73,0.08);
+            overflow: hidden;
+            position: relative;
+        }
+        .galeria-secundaria .foto {
+            min-width: 160px;
+            min-height: 100px;
+            background: #f4f9f4;
+            color: #b2cbb7;
+        }
+        .foto img {
+            width: 100%;
+            height: 140px;
+            object-fit: cover;
+            border-radius: 12px;
+            margin-top: 6px;
+        }
+        .galeria-secundaria .foto img {
+            height: 100px;
+        }
+        .foto span {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 4px;
+            background: rgba(255,255,255,0.7);
+            border-radius: 6px;
+            padding: 2px 10px;
+            position: absolute;
+            top: 8px;
+            left: 8px;
+        }
+        @media (max-width: 700px) {
+            .galeria-principal, .galeria-secundaria {
+                flex-direction: column;
+                gap: 14px;
+            }
+            .foto, .galeria-secundaria .foto {
+                min-width: 90vw;
+                min-height: 120px;
+            }
+            .foto img, .galeria-secundaria .foto img {
+                height: 120px;
+            }
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -14,16 +81,27 @@
             <a href="index.html">Home</a>
             <a href="técnicas.html">Técnicas de Irrigação</a>
             <a href="sistema.html">Sistema de Irrigação Sustentável</a>
-            <a href="java.html">Cálculo Java</a>
+            <a href="java.html">Cálculo JavaScript</a>
         </nav>
     </header>
     <main>
         <section>
             <h1>Bem-vindo!</h1>
-            <br>
             <p>
                 Este site apresenta um projeto de irrigação inteligente usando Arduino para detectar a umidade do solo e um código em Java para calcular o consumo de água semanalmente.
             </p>
+            <!-- Espaço para fotos principais -->
+            <div class="galeria-principal">
+                <div class="foto">
+                    <img src="irrigação_01.jpg" alt="Irrigação Sustentável 1">
+                </div>
+                <div class="foto">
+                    <img src="irrigação_02.jpg" alt="Irrigação Sustentável 2">
+                </div>
+                <div class="foto">
+                    <img src="irrigação_05.jpg" alt="Irrigação Sustentável 3">
+                </div>
+            </div>
         </section>
         <section id="about" aria-labelledby="about-title">
             <h2 id="about-title">O que é Irrigação Sustentável</h2>

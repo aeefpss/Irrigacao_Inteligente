@@ -2,9 +2,9 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <title>Viridis Vitae | Cálculo Java</title>
+    <title>Viridis Vitae | Cálculo JavaScript</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Cálculo do consumo de água em Java para sistema de irrigação inteligente.">
+    <meta name="description" content="Cálculo do consumo de água em JavaScript para sistema de irrigação inteligente.">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -14,39 +14,35 @@
             <a href="index.html">Home</a>
             <a href="técnicas.html">Técnicas de Irrigação</a>
             <a href="sistema.html">Sistema de Irrigação Sustentável</a>
-            <a href="java.html">Cálculo Java</a>
+            <a href="java.html" aria-current="page">Cálculo JavaScript</a>
         </nav>
     </header>
     <main>
         <section>
-            <h1>Cálculo do Consumo de Água em Java</h1>
+            <h1>Cálculo do Consumo de Água em JavaScript</h1>
             <br>
             <p>
                 O código abaixo simula a leitura dos dados de irrigação e calcula o total de água utilizada na semana e uma estimativa mensal, considerando o tempo de irrigação diário e o consumo da bomba.
             </p>
             <pre><code>
-public class CalculoAgua {
-    public static void main(String[] args) {
-        // Consumo da bomba por minuto (em litros)
-        double litrosPorMinuto = 1.5;
+// Consumo da bomba por minuto (em litros)
+const litrosPorMinuto = 1.5;
 
-        // Minutos de irrigação por dia (7 dias)
-        int[] minutosPorDia = {10, 8, 12, 5, 7, 9, 11};
+// Minutos de irrigação por dia (7 dias)
+const minutosPorDia = [10, 8, 12, 5, 7, 9, 11];
 
-        // Cálculo do total semanal
-        double totalSemanal = 0;
-        for (int minutos : minutosPorDia) {
-            totalSemanal += minutos * litrosPorMinuto;
-        }
-
-        // Estimativa mensal (4 semanas)
-        double totalMensal = totalSemanal * 4;
-
-        // Exibir resultados
-        System.out.println("Total de água usada na semana: " + totalSemanal + " litros");
-        System.out.println("Estimativa de água usada no mês: " + totalMensal + " litros");
-    }
+// Cálculo do total semanal
+let totalSemanal = 0;
+for (let minutos of minutosPorDia) {
+    totalSemanal += minutos * litrosPorMinuto;
 }
+
+// Estimativa mensal (4 semanas)
+const totalMensal = totalSemanal * 4;
+
+// Exibir resultados no console
+console.log("Total de água usada na semana: " + totalSemanal + " litros");
+console.log("Estimativa de água usada no mês: " + totalMensal + " litros");
             </code></pre>
             <details>
                 <summary><strong>Como funciona o cálculo?</strong></summary>
